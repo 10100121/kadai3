@@ -34,19 +34,15 @@
 
 
 <tr>
+<th></th>
 <th>tittle</th>
 <th>opinion</th>
-<th colspan="3"></th>
-
 </tr>
 </thead>
 <% @user.books.each do |a| %>
 <tr>
 <td class="a3"><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
 </td>
-
-<tr>
-
 <td><%=link_to a.title ,book_path(a.id) %></td>
 <td><%= a.body %></td>
 </tr>
