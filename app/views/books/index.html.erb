@@ -1,4 +1,8 @@
-<%= render 'books/book', book: @book, user: current_user %>
+<div class = "container">
+ <div class ="row">
+  <div class="col-lg-4"><%= render 'books/book', book: @book, user: current_user %></div>
+
+
 <% if @book.errors.any? %>
   <div class="alert alert-warning">
     <ul>
@@ -10,8 +14,10 @@
   </div>
  <% end %>
 <%= flash[:sign] %>
-<div class="row">
+<div class = "container">
+ <div class ="row">
 <h1>Books</h1>
+<div class="col-lg-8">
 <table class="table table-hover table-inverse">
 
 <tr>
@@ -36,4 +42,7 @@
 </tr>
 <% end %>
 </table>
+</div>
+</div>
+</div>
 </div>

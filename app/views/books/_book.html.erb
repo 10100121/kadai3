@@ -1,29 +1,28 @@
 <div class ='body'>
  <div class ='container'>
- 	<div class ='row'>
-<div class="col-xs-3">
- <h1>User info</h1>
+  <div class ='row'>
+    <div class="col-xs-2">
+     <h1>User info</h1>
 <!--部分テンプレート-->
- <%= attachment_image_tag user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
- <table class="table">
- <tbody>
- <tr>
- 	<th>name</th>
- <th>
- 	<%= user.name %></th>
- </tr>
+    <%= attachment_image_tag user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+      <table class="table">
+        <tbody>
+          <tr></tr>
+           <tr>
+ 	        <th>name</th>
+            <th><%= user.name %></th>
+           </tr>
+             <tr>
+ 	          <th>introduction</th>
+              <th><%= user.introduction %></th>
+             </tr>
 
- <tr>
- 	<th>introduction</th>
-    <th><%= user.introduction %></th>
-</tr>
+              <th></th>
 
- <th></th>
+              </tbody>
+              </table>
 
- </tbody>
- </table>
-
- <%= link_to '', edit_user_path(user), class: "col-xs-8 btn btn-default glyphicon glyphicon-wrench edit_user_9480" %>
+          <%= link_to '', edit_user_path(user), class: "col-xs-8 btn btn-default glyphicon glyphicon-wrench edit_user_9480" %>
 
 
 

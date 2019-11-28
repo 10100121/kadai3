@@ -18,7 +18,7 @@ class BooksController < ApplicationController
         @user = current_user
         @book = Book.new
         @books = Book.find(params[:id])
-        flash[:show] = 'You have creatad book successfully.'
+
 
     end
 

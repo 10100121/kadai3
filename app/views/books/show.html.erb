@@ -1,9 +1,13 @@
-<%= render 'books/book', book: @book, user: @books.user %>
+<div class = "container">
+ <div class ="row">
+  <div class="col-lg-4"><%= render 'books/book', book: @book, user: @books.user %></div>
+
 <%= flash[:edit] %>
 <%= flash[:show] %>
 
 <h1>Book detail</h1>
 
+<div class="col-lg-8">
 
 <table class="table table-hover table-inverse">
 <tr>
@@ -29,3 +33,6 @@
 <td><%= link_to "destroy", book_path(@books.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
 <% end %>
 </table>
+</div>
+</div>
+</div>
