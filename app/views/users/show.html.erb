@@ -1,0 +1,57 @@
+<!--マイページ-->
+<%= render 'books/book', book: @book, user: @user%>
+<%= flash[:edit] %>
+<%= flash[:notice] %>
+
+
+<div class="body">
+<div class="row">
+<div class="col-xs-3">
+<div class="col-xs-9">
+</div>
+
+<h1>Books</h1>
+<table class="table table-hover table-inverse">
+	<thead>
+		<tr>
+			<th></th>
+
+<%= form_for(@user) do |f| %>
+
+ <% if @user.errors.any? %>
+  <div class="alert alert-warning">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+ <% end %>
+<% end %>
+
+
+<tr>
+<th>tittle</th>
+<th>opinion</th>
+<th colspan="3"></th>
+
+</tr>
+</thead>
+<% @user.books.each do |a| %>
+<tr>
+<td class="a3"><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+</td>
+
+<tr>
+
+<td><%=link_to a.title ,book_path(a.id) %></td>
+<td><%= a.body %></td>
+</tr>
+
+<% end %>
+
+
+</table>
+</div>
+</div>
+</div>

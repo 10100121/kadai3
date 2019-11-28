@@ -1,0 +1,21 @@
+<%= render 'books/book', book: @book, user: @user %>
+
+<h1>Users</h1>
+<!--Usersページ-->
+<table class="table table-hover table-inverse">
+<tr>
+	<th>image</th>
+	<th>name</th>
+</tr>
+<% @users.each do |a| %>
+
+<tr>
+<td class="a3"><%= attachment_image_tag a, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+</td>
+<td class="a4"><%= a.name %></td>
+<td><%= link_to "show", user_path(a.id) %></td>
+
+</tr>
+<% end %>
+</table>
+<

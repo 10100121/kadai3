@@ -1,0 +1,45 @@
+<div class ='body'>
+ <div class ='container'>
+ 	<div class ='row'>
+<div class="col-xs-3">
+ <h1>User info</h1>
+<!--部分テンプレート-->
+ <%= attachment_image_tag user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+ <table class="table">
+ <tbody>
+ <tr>
+ 	<th>name</th>
+ <th>
+ 	<%= user.name %></th>
+ </tr>
+
+ <tr>
+ 	<th>introduction</th>
+    <th><%= user.introduction %></th>
+</tr>
+
+ <th></th>
+
+ </tbody>
+ </table>
+
+ <%= link_to '', edit_user_path(user), class: "col-xs-8 btn btn-default glyphicon glyphicon-wrench edit_user_9480" %>
+
+
+
+<br><h1>New Book</h1></br>
+<%= form_for book do |f| %>
+
+<h4>title</h4>
+ <%= f.text_field :title %>
+
+    <h4>opinion</h4>
+    <%= f.text_area :body %>
+
+   <br><%= f.submit 'create Book' %></br>
+</div>
+</div>
+</div>
+</div>
+
+<% end %>
